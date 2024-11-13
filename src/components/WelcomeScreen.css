@@ -1,0 +1,54 @@
+.welcome-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+    color: #fff;
+    animation: fadeIn 2s ease-out;
+}
+
+.logo {
+    width: 150px;
+    animation: zoomIn 2s ease;
+}
+
+.welcome-text {
+    margin-top: 20px;
+    font-size: 2rem;
+    opacity: 0;
+    animation: fadeInText 2s ease 1s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
