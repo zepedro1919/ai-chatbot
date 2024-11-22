@@ -1,0 +1,245 @@
+.render-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 0 1rem;
+    background: linear-gradient(to bottom, #1c1e22, #2a2c32);
+    color: #ffffff;
+    text-align: center;
+    overflow: hidden; /* Prevents scrolling */
+}
+
+.title {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #eeeeee;
+}
+
+.description {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    max-width: 800px;
+}
+
+.generated-image {
+    max-width: 100%;
+    max-height: 70%;
+    margin: 20px 0;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    object-fit: contain; /* Prevent distortion */
+}
+
+/* Chat container sits at the bottom */
+.chat-container {
+    flex-grow: 0; /* Take as much space as needed */
+    flex-shrink: 1; /* Shrink if necessary */
+    width: 100%; /* Same width as the image */
+    max-width: 1024px; /* Match image size */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.chat-left {
+    display: flex;
+    gap: 10px;
+}
+
+.contact-sales-btn img,
+.re-render-btn img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.chat-center {
+    flex-grow: 1;
+    margin: 0 10px;
+    margin-right: 35px;
+}
+
+.chat-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1 px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.chat-right {
+    flex-shrink: 0;
+}
+
+.chat-submit {
+    padding: 20px;
+    height: 100%;
+    width: 80px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: none;
+    background-color: #3a3f47;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the text */
+}
+
+.chat-submit:hover {
+    background-color: #50565e;
+}
+
+.contact-sales-btn, .re-render-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.contact-sales-btn img, .re-render-btn img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.contact-sales-btn:hover img, .re-render-btn:hover img {
+    transform: scale(1.1);
+}
+
+.contact-sales-btn:focus, .re-render-btn:focus {
+    outline: none;
+}
+
+.progress-bar-container {
+    width: 20%;
+    height: 8px;
+    background-color: #f3f3f3;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 1 rem;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: grey;
+    transition: width 0.4s ease-in-out;
+}
+
+.genie-logo-container {
+    position: fixed;
+    z-index: 10; /* Ensure it stays above the image */
+    bottom: 10%;
+    right:10%;
+    display:flex;
+    align-items:center;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.genie-logo {
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+}
+
+.message-bubble {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #f7f7f7;
+    border-radius: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
+    position: relative;
+}
+
+.message-bubble::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent #f7f7f7 transparent transparent;
+}
+
+.message-bubble p {
+    color: black;
+}
+
+.options-container {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.options-container button {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.options-container button:hover {
+    background-color: #e0e0e0;
+}
+
+/* This will occupie most of the height of the viewport */
+.image-container {
+    flex-grow: 2; /* Makes sure that it occupies most of the height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 80%; /* Limit the maximum height */
+    position: relative;
+}
+
+.generated-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.maximize-btn {
+    position: absolute;
+    top: 95px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.maximize-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker on hover */
+}
+

@@ -1,0 +1,90 @@
+.contact-sales-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background: linear-gradient(to bottom, #1c1e22, #2a2c32);
+    color: #ffffff;
+    height: 100vh; /* 100% of the viewport */
+    overflow: hidden;
+}
+
+form {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: #2a2c32;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+    height: 90%; /* Adjust form height relative to viewport */
+    overflow-y: auto; /* Allow scrolling inside the form if needed */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-right: 20px;
+}
+
+.form-image {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+label {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #1c1e22;
+    color: #ffffff;
+    resize: none; /* Prevent resizing of textarea */
+}
+
+input::placeholder, textarea::placeholder {
+    color: #888;
+}
+
+.render-preview {
+    max-width: 100%;
+    max-height: 100%;
+    margin-top: 10px;
+    border-radius: 5px;
+    object-fit: contain;
+}
+
+.submit-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3a3f47;
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #50565e;
+}
+
+@media (max-width: 768px) {
+    .contact-sales-page {
+        padding: 1rem;
+    }
+
+    .contact-sales-form {
+        width: 90%;
+    }
+}
